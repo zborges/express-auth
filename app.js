@@ -1,6 +1,13 @@
 const express = require("express");
 const app = express();
+const mongoose = require("mongoose");
+require("dotenv").config();
+
 const bodyParser = require("body-parser");
+
+mongoose.connect(process.env.MONGODB_URI).then(() => {
+  console.log("Connected to Database Successfully");
+});
 
 const port = 3000;
 
